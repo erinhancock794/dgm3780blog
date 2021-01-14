@@ -5,6 +5,19 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+
+// export default function Home() {
+//   return (
+//     <div style={{ margin: `3rem auto`, maxWidth: 600 }}>
+//       <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>
+//       <p>
+//         What do I like to do? Lots of course but definitely enjoy building
+//         websites.
+//       </p>
+//     </div>
+//   )
+// }
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -13,12 +26,13 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
           gatsby-config.js).
         </p>
+        <Bio />
+
       </Layout>
     )
   }
@@ -27,6 +41,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug

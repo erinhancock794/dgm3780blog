@@ -1,5 +1,5 @@
 ---
-title: Functions. Callbacks, and Promises
+title: Functions, Callbacks, and Promises
 date: "2021-03-01T23:46:37.121Z"
 ---
 
